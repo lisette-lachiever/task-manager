@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Task Manager</h1>
+            <p class="subtitle">Organize your work efficiently</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <input
+                    type="text"
+                    id="taskInput"
+                    placeholder="Enter a new task..."
+                    aria-label="New task"
+                />
+                <input
+                    type="date"
+                    id="taskDueDate"
+                    aria-label="Due date"
+                />
+                <button id="addTaskBtn" aria-label="Add task">
+                    Add Task
+                </button>
+            </div>
+
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">All Tasks</button>
+                <button class="filter-btn" data-filter="today">Today</button>
+                <button class="filter-btn" data-filter="week">This Week</button>
+                <button class="filter-btn" data-filter="overdue">Overdue</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+            </div>
+
+            <div class="task-list-container">
+                <ul id="taskList" class="task-list"></ul>
+                <p id="emptyState" class="empty-state">
+                    No tasks yet. Add one to get started.
+                </p>
+            </div>
+        </main>
+
+        <footer>
+            <p class="task-count">
+                <span id="totalTasks">0</span> total,
+                <span id="completedTasks">0</span> completed
+            </p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
