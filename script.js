@@ -1,7 +1,8 @@
+// Application state
 let tasks = [];
 let currentFilter = 'all';
 
-
+// DOM elements
 const taskInput = document.getElementById("taskInput");
 const taskDueDate = document.getElementById("taskDueDate");
 const addTaskBtn = document.getElementById("addTaskBtn");
@@ -11,14 +12,14 @@ const totalTasksEl = document.getElementById("totalTasks");
 const completedTasksEl = document.getElementById("completedTasks");
 const filterBtns = document.querySelectorAll(".filter-btn");
 
-
+// Initialize app
 function init() {
     loadTasksFromStorage();
     attachEventListeners();
     renderTasks();
 }
 
-
+// Load tasks
 function loadTasksFromStorage() {
     try {
         const stored = localStorage.getItem("tasks");
@@ -29,17 +30,17 @@ function loadTasksFromStorage() {
     }
 }
 
-
+// Save tasks
 function saveTasksToStorage() {
     localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
-
+// Generate unique ID
 function generateId() {
     return Date.now().toString(36) + Math.random().toString(36).slice(2);
 }
 
-
+// Add task
 function addTask() {
     const title = taskInput.value.trim();
     if (!title) {
@@ -62,7 +63,7 @@ function addTask() {
     taskInput.focus();
 }
 
-
+// Toggle completion
 function toggleTask(id) {
     const task = tasks.find(t => t.id === id);
     if (!task) return;
@@ -72,14 +73,14 @@ function toggleTask(id) {
     renderTasks();
 }
 
-
+// Delete task
 function deleteTask(id) {
     tasks = tasks.filter(t => t.id !== id);
     saveTasksToStorage();
     renderTasks();
 }
 
-
+// Filter tasks based on current filter
 function filterTasks() {
     const today = new Date();
     today.setHours(0, 0, 0, 0);
@@ -119,7 +120,7 @@ function filterTasks() {
     });
 }
 
-
+// Set active filter
 function setFilter(filter) {
     currentFilter = filter;
     
@@ -134,7 +135,7 @@ function setFilter(filter) {
     renderTasks();
 }
 
-
+// Render UI
 function renderTasks() {
     taskList.innerHTML = "";
 
@@ -156,7 +157,7 @@ function renderTasks() {
     updateCounters();
 }
 
-
+// Create task element
 function createTaskElement(task) {
     const li = document.createElement("li");
     li.className = "task-item";
@@ -172,7 +173,7 @@ function createTaskElement(task) {
     text.className = "task-text";
     text.textContent = task.title;
     
-    
+    // Add due date if exists
     if (task.dueDate) {
         const dueText = document.createElement("span");
         dueText.style.fontSize = "12px";
@@ -197,13 +198,13 @@ function createTaskElement(task) {
     return li;
 }
 
-
+// Update counters
 function updateCounters() {
     totalTasksEl.textContent = tasks.length;
     completedTasksEl.textContent = tasks.filter(t => t.completed).length;
 }
 
-
+// Events
 function attachEventListeners() {
     addTaskBtn.addEventListener("click", addTask);
 
@@ -220,5 +221,5 @@ function attachEventListeners() {
     });
 }
 
-
+// Start app
 init();
