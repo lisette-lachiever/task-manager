@@ -186,7 +186,5 @@ This project is created for educational purposes as part of my web infrastructur
 
 Lisette Mukiza
 
----
-
 
 **Live Application**: [Task-Manager](https://lisette-task-manager.netlify.app/)
