@@ -192,4 +192,4 @@ Lisette Mukiza
 ---
 
 
-**Live Application**: [lisette-task-manager.netlify.app](lisette-task-manager.netlify.app)
+**Live Application**: [Task-Manager](lisette-task-manager.netlify.app)
