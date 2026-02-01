@@ -106,7 +106,7 @@ LocalStorage (user's browser)
 
 ####  Netlify:
 1. I Created a Netlify account
-2. Then Connected to GitHub repository or drag-and-drop project folder
+2. Then Connected to my GitHub account and chose GitHub task-manager repository as the project.
 3. Deployed and received a live URL
 
 ## Running the Application Locally
