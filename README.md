@@ -59,7 +59,7 @@ When a user accesses the task manager:
 
 #### DNS (Domain Name System)
 - Converts human-readable domain names into IP addresses
-- Example: `taskmanager.netlify.app` → `75.2.60.5`
+- Example: `lisette-task-manager.netlify.app` → `75.2.60.5`
 - Acts as the internet's phone book
 
 #### Web Server
@@ -105,12 +105,9 @@ LocalStorage (user's browser)
 ### Deployment Steps
 
 ####  Netlify:
-1. Create a Netlify account
-2. Connect to GitHub repository or drag-and-drop project folder
-3. Configure build settings (none needed for static sites)
-4. Deploy and receive a live URL
-5. Optional: Add custom domain
-
+1. I Created a Netlify account
+2. Then Connected to GitHub repository or drag-and-drop project folder
+3. Deployed and received a live URL
 
 ## Running the Application Locally
 
